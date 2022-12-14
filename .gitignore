@@ -40,7 +40,7 @@ Packages
 xcuserdata
 DerivedData/
 *.xcodeproj
-
+.swiftpm/
 
 ### Xcode ###
 ## User settings
