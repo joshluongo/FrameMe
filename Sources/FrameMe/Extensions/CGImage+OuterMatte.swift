@@ -13,7 +13,7 @@ extension CGImage {
     /// Create an outer matte of the current CGImage.
     ///
     /// - Returns: The image matte or nil.
-    func createOuterMatte() -> CGImage? {
+    public func createOuterMatte() -> CGImage? {
         // Start a context
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
         let context = CGContext(

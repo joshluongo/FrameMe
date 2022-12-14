@@ -14,7 +14,7 @@ extension CGImage {
     ///
     /// - Parameter ref: Refrence Point
     /// - Returns: CGRect of the postion of the content box.
-    func findContentBox(ref: CGPoint) -> CGRect? {
+    public func findContentBox(ref: CGPoint) -> CGRect? {
         if let cfData = dataProvider?.data, let pointer = CFDataGetBytePtr(cfData) {
             // Find the prelimary points
             let prelim = XYPosHolder(

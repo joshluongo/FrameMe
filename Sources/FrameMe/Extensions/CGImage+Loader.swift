@@ -14,7 +14,7 @@ extension CGImage {
     ///
     /// - Parameter filename: File path.
     /// - Returns: CGImage
-    static func loadImage(filename: String) -> CGImage? {
+    public static func loadImage(filename: String) -> CGImage? {
         guard let cgDataProvider = CGDataProvider(filename: filename) else {
             return nil
         }
