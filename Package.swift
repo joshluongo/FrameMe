@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "FrameMe",
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .executable(
-            name: "frameme",
-            targets: ["FrameMe"]),
+    name: "frameme",
+    platforms: [
+        // Only macOS because of the difference in CoreGraphics between macOS and iOS.
+        //
+        // This would be trivial to modify so it worked on iOS platforms.
+        .macOS(.v10_15),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,10 +19,15 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .executableTarget(
-            name: "FrameMe",
+            name: "frameme",
             dependencies: []),
         .testTarget(
-            name: "FrameMeTests",
-            dependencies: ["FrameMe"]),
+            name: "framemeTests",
+            dependencies: ["frameme"],
+            resources: [
+              // Resoruces for tests.
+              .copy("Resources")
+            ]
+        )
     ]
 )
